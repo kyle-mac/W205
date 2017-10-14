@@ -1,5 +1,5 @@
 
-echo 'Creating table hospitals'
+echo 'Creating table hospitals';
 
 DROP TABLE hospitals;
 CREATE EXTERNAL TABLE hospitals
