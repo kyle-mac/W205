@@ -1,3 +1,4 @@
+DROP TABLE hospitals
 CREATE EXTERNAL TABLE hospitals
 (
 provider_id	string,
@@ -16,8 +17,9 @@ ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' WITH SERDEPROPERTI
 "separatorChar" = ",", "quoteChar" = '"',
 "escapeChar" = '\\' )
 STORED AS TEXTFILE
-LOCATION ‘/user/w205/hospital_compare’;
+LOCATION '/user/w205/hospital_compare';
 
+DROP TABLE effective_care
 CREATE EXTERNAL TABLE effective_care
 (
 provider_id	string,
@@ -41,8 +43,9 @@ ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' WITH SERDEPROPERTI
 "separatorChar" = ",", "quoteChar" = '"',
 "escapeChar" = '\\' )
 STORED AS TEXTFILE
-LOCATION ‘/user/w205/hospital_compare’;
+LOCATION '/user/w205/hospital_compare';
 
+DROP TABLE effective_care_state
 CREATE EXTERNAL TABLE effective_care_state
 (
 state string,
@@ -58,8 +61,9 @@ ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' WITH SERDEPROPERTI
 "separatorChar" = ",", "quoteChar" = '"',
 "escapeChar" = '\\' )
 STORED AS TEXTFILE
-LOCATION ‘/user/w205/hospital_compare’;
+LOCATION '/user/w205/hospital_compare';
 
+DROP TABLE readmissions
 CREATE EXTERNAL TABLE readmissions
 (
 provider_id	string,
@@ -85,8 +89,9 @@ ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' WITH SERDEPROPERTI
 "separatorChar" = ",", "quoteChar" = '"',
 "escapeChar" = '\\' )
 STORED AS TEXTFILE
-LOCATION ‘/user/w205/hospital_compare’;
+LOCATION '/user/w205/hospital_compare';
 
+DROP TABLE readmissions_state
 CREATE EXTERNAL TABLE readmissions_state
 (
 state string,
@@ -104,8 +109,9 @@ ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' WITH SERDEPROPERTI
 "separatorChar" = ",", "quoteChar" = '"',
 "escapeChar" = '\\' )
 STORED AS TEXTFILE
-LOCATION ‘/user/w205/hospital_compare’;
+LOCATION '/user/w205/hospital_compare';
 
+DROP TABLE Measures
 CREATE EXTERNAL TABLE Measures
 (
 measure_name string,
@@ -119,8 +125,9 @@ ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' WITH SERDEPROPERTI
 "separatorChar" = ",", "quoteChar" = '"',
 "escapeChar" = '\\' )
 STORED AS TEXTFILE
-LOCATION ‘/user/w205/hospital_compare’;
+LOCATION '/user/w205/hospital_compare';
 
+DROP TABLE surveys_responses
 CREATE EXTERNAL TABLE surveys_responses
 (
 provider_number string,
@@ -161,4 +168,4 @@ ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' WITH SERDEPROPERTI
 "separatorChar" = ",", "quoteChar" = '"',
 "escapeChar" = '\\' )
 STORED AS TEXTFILE
-LOCATION ‘/user/w205/hospital_compare’;
+LOCATION '/user/w205/hospital_compare';
