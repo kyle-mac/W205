@@ -1,5 +1,5 @@
 
-echo 'Creating table hospitals';
+PRINT 'Creating table hospitals';
 
 DROP TABLE hospitals;
 CREATE EXTERNAL TABLE hospitals
@@ -23,7 +23,7 @@ STORED AS TEXTFILE
 LOCATION '/user/w205/hospital_compare';
 
 
-echo 'Creating table effective_care'
+PRINT 'Creating table effective_care'
 
 DROP TABLE effective_care;
 CREATE EXTERNAL TABLE effective_care
@@ -52,7 +52,7 @@ STORED AS TEXTFILE
 LOCATION '/user/w205/hospital_compare';
 
 
-echo 'Creating table effective_care_state'
+PRINT 'Creating table effective_care_state'
 
 DROP TABLE effective_care_state;
 CREATE EXTERNAL TABLE effective_care_state
@@ -73,7 +73,7 @@ STORED AS TEXTFILE
 LOCATION '/user/w205/hospital_compare';
 
 
-echo 'Creating table readmissions'
+PRINT 'Creating table readmissions'
 
 DROP TABLE readmissions;
 CREATE EXTERNAL TABLE readmissions
@@ -104,7 +104,7 @@ STORED AS TEXTFILE
 LOCATION '/user/w205/hospital_compare';
 
 
-echo 'Creating table readmissions_state'
+PRINT 'Creating table readmissions_state'
 
 DROP TABLE readmissions_state;
 CREATE EXTERNAL TABLE readmissions_state
@@ -127,7 +127,7 @@ STORED AS TEXTFILE
 LOCATION '/user/w205/hospital_compare';
 
 
-echo 'Creating table Measures'
+PRINT 'Creating table Measures'
 
 DROP TABLE Measures;
 CREATE EXTERNAL TABLE Measures
@@ -146,7 +146,7 @@ STORED AS TEXTFILE
 LOCATION '/user/w205/hospital_compare';
 
 
-echo 'Creating table surveys_responses'
+PRINT 'Creating table surveys_responses'
 
 DROP TABLE surveys_responses;
 CREATE EXTERNAL TABLE surveys_responses
