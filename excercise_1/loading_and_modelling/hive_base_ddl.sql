@@ -20,7 +20,7 @@ STORED AS TEXTFILE
 LOCATION '/user/w205/hospital_compare';
 
 
-DROP TABLE effective_care;
+DROP TBLE effective_care;
 CREATE EXTERNAL TABLE effective_care
 (
 provider_id	string,
