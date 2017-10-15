@@ -1,6 +1,6 @@
 #Note from within home/205 I cloned down the W205 project from git
 #Then I ran cd W205/excercise_1/loading_and_modelling/
-#From there I ran this load_data_lake.sh script
+#From there I ran this load_data_lake.sh script as su - w205
 
 tail -n +2 "Hospital General Information.csv" > hospitals.csv
 tail -n +2 "hvbp_hcahps_05_28_2015.csv" > surveys_responses.csv
@@ -10,7 +10,6 @@ tail -n +2 "Readmissions and Deaths - Hospital.csv" > readmissions.csv
 tail -n +2 "Readmissions and Deaths - State.csv" > readmissions_state.csv
 tail -n +2 "Measure Dates.csv" > Measures.csv
 
-su -  w205
 hdfs dfs -mkdir /user/w205/hospital_compare
 hdfs dfs -mkdir /user/w205/hospital_compare/hospitals
 hdfs dfs -mkdir /user/w205/hospital_compare/surveys_responses
