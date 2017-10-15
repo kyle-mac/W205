@@ -20,7 +20,7 @@ hdfs dfs -mkdir /user/w205/hospital_compare/readmissions
 hdfs dfs -mkdir /user/w205/hospital_compare/readmissions_state
 hdfs dfs -mkdir /user/w205/hospital_compare/Measures
 
-hdfs dfs -put hospitals.csv /user/w205/hospital_compare//hospitals
+hdfs dfs -put hospitals.csv /user/w205/hospital_compare/hospitals
 hdfs dfs -put surveys_responses.csv /user/w205/hospital_compare/surveys_responses
 hdfs dfs -put effective_care.csv /user/w205/hospital_compare/effective_care
 hdfs dfs -put effective_care_state.csv /user/w205/hospital_compare/effective_care_state
