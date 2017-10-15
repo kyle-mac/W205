@@ -17,7 +17,7 @@ ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' WITH SERDEPROPERTI
 "separatorChar" = ",", "quoteChar" = '"',
 "escapeChar" = '\\' )
 STORED AS TEXTFILE
-LOCATION '/user/w205/hospital_compare';
+LOCATION '/user/w205/hospital_compare/hospitals';
 
 
 DROP TABLE effective_care;
@@ -44,7 +44,7 @@ ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' WITH SERDEPROPERTI
 "separatorChar" = ",", "quoteChar" = '"',
 "escapeChar" = '\\' )
 STORED AS TEXTFILE
-LOCATION '/user/w205/hospital_compare';
+LOCATION '/user/w205/hospital_compare/effective_care';
 
 
 DROP TABLE effective_care_state;
@@ -63,7 +63,7 @@ ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' WITH SERDEPROPERTI
 "separatorChar" = ",", "quoteChar" = '"',
 "escapeChar" = '\\' )
 STORED AS TEXTFILE
-LOCATION '/user/w205/hospital_compare';
+LOCATION '/user/w205/hospital_compare/effective_care_state';
 
 
 DROP TABLE readmissions;
@@ -92,7 +92,7 @@ ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' WITH SERDEPROPERTI
 "separatorChar" = ",", "quoteChar" = '"',
 "escapeChar" = '\\' )
 STORED AS TEXTFILE
-LOCATION '/user/w205/hospital_compare';
+LOCATION '/user/w205/hospital_compare/readmissions';
 
 
 DROP TABLE readmissions_state;
@@ -113,7 +113,7 @@ ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' WITH SERDEPROPERTI
 "separatorChar" = ",", "quoteChar" = '"',
 "escapeChar" = '\\' )
 STORED AS TEXTFILE
-LOCATION '/user/w205/hospital_compare';
+LOCATION '/user/w205/hospital_compare/readmissions_state';
 
 
 DROP TABLE Measures;
@@ -130,7 +130,7 @@ ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' WITH SERDEPROPERTI
 "separatorChar" = ",", "quoteChar" = '"',
 "escapeChar" = '\\' )
 STORED AS TEXTFILE
-LOCATION '/user/w205/hospital_compare';
+LOCATION '/user/w205/hospital_compare/Measures';
 
 
 DROP TABLE surveys_responses;
@@ -174,4 +174,4 @@ ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' WITH SERDEPROPERTI
 "separatorChar" = ",", "quoteChar" = '"',
 "escapeChar" = '\\' )
 STORED AS TEXTFILE
-LOCATION '/user/w205/hospital_compare';
+LOCATION '/user/w205/hospital_compare/surveys_responses';
