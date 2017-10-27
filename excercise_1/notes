@@ -19,3 +19,6 @@ SCIP_INF_1 – higher is better (surgical metric)
 CREATE TABLE effective_care_state_transform AS SELECT *, RANK() OVER (PARTITION BY effective_care_state.measure_id ORDER BY (effective_care_state.score)) as measure_rank FROM effective_care_state WHERE effective_care_state.measure_id IN ('AMI_2', 'AMI_10', 'IMM_2', ' SCIP_INF_1') AND effective_care_state.score !='Not Available'
 
 SELECT effective_care_state_transform.state, SUM(effective_care_state_transform.measure_rank) FROM effective_care_state_transform GROUP BY effective_care_state_transform.state
+
+
+JOIN SELECT variance(effective_care_state.score)
