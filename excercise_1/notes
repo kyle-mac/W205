@@ -7,3 +7,8 @@ SELECT *, effective_care.score, RANK() OVER (PARTITION BY measure_id ORDER BY (e
 CREATE TABLE effective_care2 AS SELECT *, RANK() OVER (PARTITION BY measure_id ORDER BY (effective_care.score)) as measure_rank FROM effective_care WHERE effective_care.measure_id IN ('IMM_2', 'ED_1b') AND effective_care.score !='Not Available'
 
 Need to update to add other two conditions that are positive
+
+AM_2 Aspirin prescribed at discharge (higher is better)
+AMI_10 Statin at Discharge (higher is better)
+IMM_2 Immunization for influenza (stats to influenza) (higher is better)
+SCIP_INF_1 – higher is better (surgical metric)
