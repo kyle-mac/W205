@@ -1,6 +1,7 @@
 Notes 
 
 http://hcahpsonline.org/files/HCAHPS%20Fact%20Sheet%20May%202012.pdf 
+1.)
 
 SELECT *, effective_care.score, RANK() OVER (PARTITION BY measure_id ORDER BY (effective_care.score)) FROM effective_care WHERE effective_care.measure_id IN ('AMI_2', 'AMI_10', 'IMM_2', 'ED_1b') AND effective_care.score !='Not Available'
 
@@ -15,6 +16,7 @@ AMI_10 Statin at Discharge (higher is better)
 IMM_2 Immunization for influenza (stats to influenza) (higher is better)
 SCIP_INF_1 – higher is better (surgical metric)
 
+2.)
 
 CREATE TABLE effective_care_state_transform AS SELECT *, RANK() OVER (PARTITION BY effective_care_state.measure_id ORDER BY (effective_care_state.score)) as measure_rank FROM effective_care_state WHERE effective_care_state.measure_id IN ('AMI_2', 'AMI_10', 'IMM_2', ' SCIP_INF_1') AND effective_care_state.score !='Not Available'
 
@@ -22,3 +24,7 @@ SELECT effective_care_state_transform.state, SUM(effective_care_state_transform.
 
 
 JOIN SELECT variance(effective_care_state.score)
+
+3.) SELECT variance(effective_care_state.score) GROUP BY effective_care.measure_id
+
+4.)
