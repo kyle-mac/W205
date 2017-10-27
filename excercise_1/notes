@@ -1,0 +1,9 @@
+Notes 
+
+http://hcahpsonline.org/files/HCAHPS%20Fact%20Sheet%20May%202012.pdf 
+
+SELECT *, effective_care.score, RANK() OVER (PARTITION BY measure_id ORDER BY (effective_care.score)) FROM effective_care WHERE effective_care.measure_id IN ('AMI_2', 'AMI_10', 'IMM_2', 'ED_1b') AND effective_care.score !='Not Available'
+
+CREATE TABLE effective_care2 AS SELECT *, RANK() OVER (PARTITION BY measure_id ORDER BY (effective_care.score)) as measure_rank FROM effective_care WHERE effective_care.measure_id IN ('IMM_2', 'ED_1b') AND effective_care.score !='Not Available'
+
+Need to update to add other two conditions that are positive
