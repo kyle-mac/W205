@@ -28,3 +28,61 @@ JOIN SELECT variance(effective_care_state.score)
 3.) SELECT variance(effective_care_state.score) GROUP BY effective_care.measure_id
 
 4.)
+
+
+1.)	What hospitals are models of high-quality care? (Consistent high scores for a variety of procedures…)
+
+
+CREATE TABLE effective_care_transform AS SELECT *, RANK() OVER (PARTITION BY measure_id ORDER BY (effective_care.score)) as measure_rank FROM effective_care WHERE effective_care.measure_id IN ('AMI_2', 'AMI_10', 'IMM_2', ' SCIP_INF_1') AND effective_care.score !='Not Available'
+
+SELECT effective_care_transform.hospital_name, effective_care_transform.state, SUM(effective_care_transform.measure_rank) as provider_score FROM effective_care_transform GROUP BY effective_care_transform.hospital_name, effective_care_transform.state ORDER BY provider_score ASC LIMIT 10
+
+effective_care_transform.hospital_name	effective_care_transform.state	provider_score
+TURNING POINT HOSPITAL	GA	1
+SAINT JOSEPH BEREA	KY	1
+KENSINGTON HOSPITAL	PA	1
+EMERUS HOSPITAL	TX	1
+J PAUL JONES HOSPITAL	AL	1
+CALDWELL MEMORIAL HOSPITAL, INC	LA	1
+HOSPITAL PAVIA HATO REY, INC	PR	2
+SISTEMA INTEGRADOS DE SALUD DEL SUR OESTE INC	PR	2
+MANATI MEDICAL CENTER DR OTERO LOPEZ	PR	2
+WEEKS MEDICAL CENTER	NH	2
+
+
+2.)	What states are models of high quality care?
+
+CREATE TABLE effective_care_state_transform AS SELECT *, RANK() OVER (PARTITION BY effective_care_state.measure_id ORDER BY (effective_care_state.score)) as measure_rank FROM effective_care_state WHERE effective_care_state.measure_id IN ('AMI_2', 'AMI_10', 'IMM_2', ' SCIP_INF_1') AND effective_care_state.score !='Not Available'
+
+SELECT effective_care_state_transform.state, SUM(effective_care_state_transform.measure_rank) as state_score FROM effective_care_state_transform GROUP BY effective_care_state_transform.state ORDER BY state_score ASC LIMIT 10
+
+effective_care_state_transform.state	state_score
+AK	5
+GU	22
+VI	23
+PR	23
+CO	28
+MT	29
+OR	33
+NM	34
+ND	35
+DC	35
+
+3.) Which procedures have the greatest variability between hospitals?
+
+
+SELECT effective_care.measure_name, variance(effective_care.score) as variance_level FROM effective_care GROUP BY effective_care.measure_name SORT BY variance_level DESC LIMIT 10
+
+effective_care.measure_name	variance_level
+ED1	8617.740839
+ED2	3864.692446
+OP 18	1656.552941
+Median Time to Transfer to Another Facility for Acute Coronary Intervention	869.0306969
+Thrombolytic Therapy	481.9866588
+Head CT results	477.1888861
+Fibrinolytic Therapy Received Within 30 Minutes Of Hospital Arrival	352.6666667
+Fibrinolytic Therapy Received Within 30 Minutes of ED Arrival	325.7463235
+Median time to pain med	314.0819736
+Door to diagnostic eval	285.0037127
+
+
