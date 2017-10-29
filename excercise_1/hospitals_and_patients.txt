@@ -5,7 +5,7 @@ It order to properly assess this question it was necessary to join data between 
 Specifically, the survey data was given at a hospital level rather than procedural, i.e. a patient scored the hospital in the survey and not specifically the procedure itself.  Given this notion there was no way to tie back to the survey procedure so I went ahead and tied the survey data back to the hospital rankings I had created through problem 1 to the survey base score as this score represents an aggregated score from the various HCAHPS survey questions [1].
 http://www.hcahpsonline.org/files/HCAHPS%20Fact%20Sheet%20May%202012.pdf
 
-Based on my calculations the overall scoring was low:
+Based on my calculations the overall scoring of correlations between the two was low as seen below and not indicitive of a strong correlation between the two based on the procedures used within my analysis:
 
 hospital_survey_correlation
 -0.15964500986183852
