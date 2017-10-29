@@ -1,0 +1,28 @@
+2.) What states are models of high-quality care?
+
+
+Based on the presumptions made for question 1 I chose to focus on the same four procedural codes ranging across heart disease care, preventive care, and surgical care to assess quality care at the state level.  To assess this problem I used the data available within "Timely and Effective Care - State.csv" from the CMS Hospital Compare project.  Given the similarity of this data in comparison to the hospital data, I was able to apply similar calculations but at a state level.  
+
+
+
+AMI_2 - Aspirin prescribed at discharge (Heart Attack Care)
+
+AMI_10 - Statin at Discharge (Heart Attack Care)
+
+IMM_2 - Immunization for influenza (Preventive Care)
+
+SCIP_INF_1 - Prophylactic antibiotic received within 1 hour prior to surgical incision (Surgical Care)
+
+
+
+effective_care_state_transform.state | state_score
+AK                                   | 5
+GU                                   | 22
+VI                                   | 23
+PR                                   | 23
+CO                                   | 28
+MT                                   | 29
+OR                                   | 33
+NM                                   | 34
+ND                                   | 35
+DC                                   | 35
