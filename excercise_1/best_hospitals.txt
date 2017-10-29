@@ -1,0 +1,28 @@
+1.) What hospitals are models of high-quality care? (Consistent high scores for a variety of procedures?)
+
+In reviewing the Centers for Medicare and Medicaid services report on hospital value and scoring [1], I found that the majority of quality care scoring for a hospital came down to scoring of a given hospital�s measures of care.  These measures of care are best defined through the "Timely and Effective Care - Hospital.csv" file according to Medicare.gov and it�s references to the Hospital Compare dataset [2].  For this reason I chose to focus on this specific csv file for all querying and analysis to determine which hospitals are in standard with high quality care.
+
+Through the procedure types listed on the Medicare.gov site, preventive care and heart attack care were revealed as two key procedural measure types.  In order to assess a few procedures I scanned the dataset to identify related procedures in which data was commonly available for hospitals and fit within measures of assessing quality care.  For these reasons I chose to assess two procedures relating to heart attack care, a procedure from preventive care, and a procedure for surgical care. These procedural categories are helpful in indicating an overall high quality care given that heart disease is the most expensive medical condition for the US healthcare system costing $193.4 billion annually and that poor preventative and surgical standards greatly contribute to health complications and deaths within hospital settings [3].
+
+AMI_2 - Aspirin prescribed at discharge (Heart Attack Care)
+AMI_10 - Statin at Discharge (Heart Attack Care)
+IMM_2 - Immunization for influenza (Preventive Care)
+SCIP_INF_1 - Prophylactic antibiotic received within 1 hour prior to surgical incision (Surgical Care)
+
+In order to perform analysis I calculated the individual scoring rank for each individual procedure across all hospitals.  From then on I calculated a finalized score rank by combining all ranks into a final rank score.  Given a higher score was best for each of these procedures no additional manipulations were required between summing the rankings for a finalized hospital score rank.  The below list of ten highlights the hospitals that were able to score in the top 1 and 2 ranks.
+
+hospital_care.hospital_name              | hospital_care.state | hospital_care.provider_score
+J PAUL JONES HOSPITAL                    | AL                  | 1
+SAINT JOSEPH BEREA                       | KY                  | 1
+CALDWELL MEMORIAL HOSPITAL, INC          | LA                  | 1
+EMERUS HOSPITAL                          | TX                  | 1
+KENSINGTON HOSPITAL                      | PA                  | 1
+TURNING POINT HOSPITAL                   | GA                  | 1
+HOSPITAL EPISCOPAL SAN LUCAS GUAYAMA INC |PR                   | 2
+MANATI MEDICAL CENTER DR OTERO LOPEZ     | PR                  | 2
+SAN JUAN MUNICIPAL HOSPITAL              |PR                   | 2
+CASTLE ROCK ADVENTIST HOSPITAL           |CO                   | 2
+
+[1] https://www.cms.gov/Medicare/Quality-Initiatives-Patient-Assessment-Instruments/hospital-value-based-purchasing/downloads/HospVBP_ODF_072711.pdf
+[2] https://www.medicare.gov/hospitalcompare/About/Timely-Effective-Care.html
+[3] https://www.webmd.com/healthy-aging/ss/slideshow-top-11-medical-expenses
