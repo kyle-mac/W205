@@ -1,0 +1,18 @@
+Which procedures have the greatest variability between hospitals?
+
+
+Given that hospital procedural data was outlined within the "Timely and Effective Care - Hospital.csv" I chose to use this dataset for variability analysis.  The hive variance function combined with a group by allows for appropriate calculations of variance for each measure within this csv.  
+
+The below table shows the top ten procedures with the highest variability:
+
+effective_care.measure_name                                                     | variance_level
+ED1                                                                             | 8617.740839
+ED2                                                                             | 3864.692446
+OP 18                                                                           | 1656.552941
+Median Time to Transfer to Another Facility for Acute Coronary Intervention     | 869.0306969
+Thrombolytic Therapy                                                            | 481.9866588
+Head CT results                                                                 | 477.1888861
+Fibrinolytic Therapy Received Within 30 Minutes Of Hospital Arrival             | 352.6666667
+Fibrinolytic Therapy Received Within 30 Minutes of ED Arrival                   | 325.7463235
+Median time to pain med                                                         | 314.0819736
+Door to diagnostic eval                                                         | 285.0037127
